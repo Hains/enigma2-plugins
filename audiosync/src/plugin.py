@@ -78,7 +78,7 @@ class AudioRestart():
 
 	def startTimer(self):
 		self.intDelay = config.plugins.AC3LipSync.restartDelay.value * 1000
-		print "[AudioSync] audio restart in ", self.intDelay
+		print("[AudioSync] audio restart in ", self.intDelay)
 		self.activateTimer.start(self.intDelay, True)
 
 	def restartAudio(self):
@@ -88,7 +88,7 @@ class AudioRestart():
 			config.av.downmix_ac3.save()
 			config.av.downmix_ac3.value = False
 			config.av.downmix_ac3.save()
-			print "[AudioSync] audio restarted"
+			print("[AudioSync] audio restarted")
 
 	def audioIsAC3(self):
 		service = NavigationInstance.instance and NavigationInstance.instance.getCurrentService()
@@ -146,10 +146,10 @@ class audioDelay(Screen):
 						AC3delay.setSystemDelay(sAudio, delay_value, True)
 						if delay_service and delay_value != 0:
 							self.updateDelay = True
-							print "[AudioSync] set stream service audio delay %s" % delay_value
+							print("[AudioSync] set stream service audio delay %s" % delay_value)
 						else:
 							self.updateDelay = False
-							print "[AudioSync] return default stream service audio delay %s" % delay_value
+							print("[AudioSync] return default stream service audio delay %s" % delay_value)
 
 	def updateServiceDelay(self):
 		self.ServiceDelay = getServiceDict()
