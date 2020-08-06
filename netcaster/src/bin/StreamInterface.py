@@ -76,6 +76,7 @@ class StreamInterface:
 			self.cbListLoaded(self.list)
 
 ###############################################################################
+
 class Stream:
 	isfavorite = False
 
@@ -132,9 +133,12 @@ class Stream:
 
 	def setFavorite(self,TrueFalse):
 		self.isfavorite = TrueFalse
+
 	def isFavorite(self):
 		return self.isfavorite
+
 	def setType(self,type):
 		self.type=type
+
 	def getType(self):
 		return self.type
