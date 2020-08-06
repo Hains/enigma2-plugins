@@ -241,7 +241,6 @@ class NETcasterScreenHelp(Screen):
 ###############################################################################
 
 class StreamMenu(MenuList):
-
 	def __init__(self, list, enableWrapAround = False):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
 		self.l.setFont(0, gFont("Regular", 20))
@@ -264,7 +263,6 @@ class StreamMenu(MenuList):
 ###############################################################################
 
 class NETcasterScreenStreamDelete(Screen):
-
 	def __init__(self, session):
 		self.session = session
 		self.config = NETcasterConfig()

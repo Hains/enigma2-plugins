@@ -148,7 +148,6 @@ class StationParser(ContentHandler):
 				print('Parsed ', self.count, ' stations')
 
 class GenreParse(ContentHandler):
-
 	def __init__( self ):
 		self.isGenre = False
 		self.isGenreList = False
@@ -169,7 +168,6 @@ class GenreParse(ContentHandler):
 			self.isGenreList = False
 
 class GenreFeed:
-
 	def __init__(self, cache_ttl=3600, cache_dir = '/tmp/pyshout_cache'):
 		self.cache_ttl = cache_ttl
 		self.cache_file = cache_dir + '/genres.cache'
@@ -208,7 +206,6 @@ class GenreFeed:
 		return self.genre_list
 
 class ShoutcastFeed:
-
 	def __init__(self, genre, min_bitrate=128, cache_ttl=600, cache_dir='/tmp/pyshout_cache'):
 		"""
 		Parses the xml feed and spits out a list of dictionaries with the station info
