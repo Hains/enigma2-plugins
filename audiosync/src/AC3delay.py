@@ -1,5 +1,6 @@
 from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
 from Components.config import config
+from Components.SystemInfo import SystemInfo
 from enigma import eTimer
 from Tools.ISO639 import LanguageCodes
 from Tools.HardwareInfo import HardwareInfo
@@ -156,7 +157,13 @@ class AC3delay:
 
 		# check if downmix is enabled
 		try:
-			bDownmixEnabled = config.av.downmix_ac3.value
+			if SystemInfo["DreamBoxAudio"]:
+				if config.av.downmix_ac3.value == "downmix":
+					bDownmixEnabled = True
+				else:
+					bDownmixEnabled = False
+			else:
+				bDownmixEnabled = config.av.downmix_ac3.value
 		except:
 			bDownmixEnabled = False
 
